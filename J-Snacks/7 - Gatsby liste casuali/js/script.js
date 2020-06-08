@@ -5,25 +5,24 @@
 // INPUT
 var nomi = ['Bianco', 'Rosso', 'Giallo','Verde','Blu'];
 var cognomi = ['Uno', 'Due', 'Tre','Quattro','Cinque'];
+var nStringhe = 3;
+var listaCasuale = [];
 
-//          FUNZIONI           //
-function nomeCognomeRandom(nomi, cognomi, nStringhe) {
-  var nomi = [];
-  var cognomi = [];
-  var nStringhe;
-  var array = [];
+for (var i = 0; i < nStringhe; i++) {
 
-  for (var i = 0; i < nStringhe; i++) {
-    var nUno = randomInt(1, nomi.length-1);
-    var nDue = randomInt(1, cognomi.length-1);
+  // indici casuali
+  var nUno = randomInt(0, nomi.length-1);
+  var nDue = randomInt(0, cognomi.length-1);
 
-    array.push(nomi[nUno] + ' ' + cognomi[nDue]);
-  }
-  return array;
+  var nomeCasuale = nomi[nUno];
+  var cognomeCasuale = cognomi[nDue];
+
+  var nomeFalso = nomeCasuale + ' ' + cognomeCasuale;
+
+  listaCasuale.push(nomeFalso);
 }
 
 // OUTPUT
-var listaCasuale = nomeCognomeRandom(nomi, cognomi, 2)
 console.log(nomi);
 console.log(cognomi);
 console.log(listaCasuale);
